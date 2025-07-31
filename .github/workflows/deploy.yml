@@ -23,7 +23,7 @@ jobs:
 
       - name: Upload website files to S3
         run: |
-          aws s3 sync . s3://aforodoma-com-bucket --delete --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+          aws s3 sync . s3://dev-aforodoma-site-bucket --delete --cache-control "max-age=0,no-cache,no-store,must-revalidate"
 
       - name: Invalidate CloudFront cache
         run: |
