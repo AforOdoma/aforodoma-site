@@ -27,21 +27,15 @@ jobs:
           echo "Testing AWS connection..."
           aws s3 ls s3://dev-aforodoma-site-bucket
 
-      - name: List files to be deployed
+      - name: Navigate to website directory
+        working-directory: ./aforodoma-site/website
         run: |
-          echo "Files in repository root:"
+          echo "Switched to directory: $(pwd)"
+          echo "Listing contents:"
           ls -la
-          echo ""
-          echo "HTML files:"
-          find . -name "*.html" -not -path "./.git/*" -not -path "./.github/*"
-          echo ""
-          echo "JavaScript files:"
-          find . -name "*.js" -not -path "./.git/*" -not -path "./.github/*"
-          echo ""
-          echo "CSS files:"
-          find . -name "*.css" -not -path "./.git/*" -not -path "./.github/*"
 
       - name: Deploy to S3
+        working-directory: ./aforodoma-site/website
         run: |
           echo "Deploying files to S3..."
           aws s3 sync . s3://dev-aforodoma-site-bucket \
