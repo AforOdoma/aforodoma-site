@@ -324,3 +324,28 @@ aws cloudfront list-distributions --query 'DistributionList.Items[?Aliases.Items
 aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/\*"
 
 aws cloudfront create-invalidation --distribution-id E2EEF8MYXOI1H9 --paths "/\*"
+
+# Go to your website folder (where index.html is)
+
+cd /f/Projects/FullStack/ThreeJs/your-website-folder
+
+# List what files you have locally
+
+ls -la
+
+# Try uploading everything except GitHub files
+
+aws s3 sync . s3://dev-aforodoma-site-bucket \
+ --exclude ".github/_" \
+ --exclude "_.yml" \
+ --exclude "_.yaml" \
+ --exclude "_.md" \
+ --delete
+
+# Check what got uploaded
+
+aws s3 ls s3://dev-aforodoma-site-bucket --recursive
+
+# invalidate cloudfront
+
+aws cloudfront create-invalidation --distribution-id E2EEF8MYXOI1H9 --paths "/\*"
