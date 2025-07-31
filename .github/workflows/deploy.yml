@@ -1,10 +1,11 @@
 # .github/workflows/deploy.yml
-name: Deploy Website to S3
+name: Deploy Website to S3 and CloudFront
 
 on:
   push:
     branches:
-      - main # or your default branch
+      - main
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
   deploy:
@@ -12,27 +13,71 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Upload website files to S3
+      - name: Verify AWS connection
         run: |
-          # Upload specific file types for a Three.js website
+          echo "Testing AWS connection..."
+          aws s3 ls s3://dev-aforodoma-site-bucket
+
+      - name: List files to be deployed
+        run: |
+          echo "Files in repository root:"
+          ls -la
+          echo ""
+          echo "HTML files:"
+          find . -name "*.html" -not -path "./.git/*" -not -path "./.github/*"
+          echo ""
+          echo "JavaScript files:"
+          find . -name "*.js" -not -path "./.git/*" -not -path "./.github/*"
+          echo ""
+          echo "CSS files:"
+          find . -name "*.css" -not -path "./.git/*" -not -path "./.github/*"
+
+      - name: Deploy to S3
+        run: |
+          echo "Deploying files to S3..."
           aws s3 sync . s3://dev-aforodoma-site-bucket \
-          --exclude ".github/_" \
-          --exclude "_.yml" \
-          --exclude "_.yaml" \
-          --exclude "_.md" \
-          --delete
+            --exclude ".github/*" \
+            --exclude "*.yml" \
+            --exclude "*.yaml" \
+            --exclude "*.md" \
+            --delete \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+
+      - name: Verify S3 upload
+        run: |
+          echo "Files uploaded to S3:"
+          aws s3 ls s3://dev-aforodoma-site-bucket --recursive
+
+      - name: Get CloudFront Distribution ID
+        id: get-distribution
+        run: |
+          DIST_ID=$(aws cloudfront list-distributions --query 'DistributionList.Items[?Aliases.Items[?contains(@, `aforodoma.com`)]].Id' --output text)
+          echo "Distribution ID: $DIST_ID"
+          echo "distribution_id=$DIST_ID" >> $GITHUB_OUTPUT
 
       - name: Invalidate CloudFront cache
         run: |
+          echo "Creating CloudFront invalidation..."
           aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
+            --distribution-id ${{ steps.get-distribution.outputs.distribution_id }} \
             --paths "/*"
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Deployment completed successfully!"
+          echo "🌐 Your website should be available at:"
+          echo "   - https://aforodoma.com"
+          echo "   - https://www.aforodoma.com"
+          echo ""
+          echo "⏰ CloudFront cache invalidation may take 5-15 minutes to complete."
+          echo "📊 S3 bucket: dev-aforodoma-site-bucket"
+          echo "🔄 Distribution ID: ${{ steps.get-distribution.outputs.distribution_id }}"
