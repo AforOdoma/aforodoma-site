@@ -28,14 +28,26 @@ jobs:
           aws s3 ls s3://dev-aforodoma-site-bucket
 
       - name: Navigate to website directory
-        working-directory: ./aforodoma-site/website
+        working-directory: ./website
         run: |
           echo "Switched to directory: $(pwd)"
           echo "Listing contents:"
           ls -la
 
+      - name: List files to be deployed
+        working-directory: ./website
+        run: |
+          echo "HTML files:"
+          find . -name "*.html"
+          echo ""
+          echo "JavaScript files:"
+          find . -name "*.js"
+          echo ""
+          echo "CSS files:"
+          find . -name "*.css"
+
       - name: Deploy to S3
-        working-directory: ./aforodoma-site/website
+        working-directory: ./website
         run: |
           echo "Deploying files to S3..."
           aws s3 sync . s3://dev-aforodoma-site-bucket \
@@ -72,6 +84,6 @@ jobs:
           echo "   - https://aforodoma.com"
           echo "   - https://www.aforodoma.com"
           echo ""
-          echo "⏰ CloudFront cache invalidation may take 5-15 minutes to complete."
+          echo "⏰ CloudFront cache invalidation may take 5–15 minutes to complete."
           echo "📊 S3 bucket: dev-aforodoma-site-bucket"
           echo "🔄 Distribution ID: ${{ steps.get-distribution.outputs.distribution_id }}"
