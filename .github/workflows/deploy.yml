@@ -25,22 +25,11 @@ jobs:
         run: |
           # Upload specific file types for a Three.js website
           aws s3 sync . s3://dev-aforodoma-site-bucket \
-            --delete \
-            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
-            --include "*.html" \
-            --include "*.css" \
-            --include "*.js" \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
-            --include "*.gif" \
-            --include "*.svg" \
-            --include "*.ico" \
-            --include "*.json" \
-            --include "*.woff*" \
-            --include "*.ttf" \
-            --include "*.otf" \
-            --exclude "*"
+          --exclude ".github/*" \
+          --exclude "*.yml" \
+          --exclude "*.yaml" \
+          --exclude "*.md" \
+          --delete
 
       - name: Invalidate CloudFront cache
         run: |

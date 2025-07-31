@@ -303,3 +303,24 @@ git push -u origin main
 End
 End
 end
+aws s3 cp index.html s3://dev-aforodoma-site-bucket/
+
+aws s3 cp style.css s3://dev-aforodoma-site-bucket/
+
+# Check what got uploaded
+
+aws s3 ls s3://dev-aforodoma-site-bucket --recursive
+
+aws s3 cp ./examples/models/json/suzanne_buffergeometry.json s3://dev-aforodoma-site-bucket/suzanne_buffergeometry.json
+
+aws s3 cp ./examples/afor-luxury-suits_2n150tgz.mp4 s3://dev-aforodoma-site-bucket/afor-luxury-suits_2n150tgz.mp4
+
+# Get your CloudFront distribution ID first
+
+aws cloudfront list-distributions --query 'DistributionList.Items[?Aliases.Items[?contains(@, `aforodoma.com`)]].Id' --output text
+
+# Then invalidate (replace DISTRIBUTION_ID with actual ID)
+
+aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/\*"
+
+aws cloudfront create-invalidation --distribution-id E2EEF8MYXOI1H9 --paths "/\*"
