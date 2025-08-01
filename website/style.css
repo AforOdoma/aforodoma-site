@@ -15,7 +15,7 @@ canvas {
   left: 0;
 }
 
-:root {
+/* :root {
   --dark-bg: linear-gradient(
     to right,
     rgba(3, 232, 240, 0.95),
@@ -26,7 +26,7 @@ canvas {
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 main {
   width: 100vw;
@@ -193,6 +193,34 @@ blockquote p {
 }
 .slideshow-container img.active {
   opacity: 1;
+}
+
+/* Add blurred white background to hero text */
+.hero-text-overlay {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 40px;
+  margin: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure text is readable */
+.hero-text-overlay h1,
+.hero-text-overlay p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+
+.hero-text-overlay .cta-button2 {
+  margin-top: 20px;
+}
+
+/* Optional: Add some breathing room */
+blockquote .hero-text-overlay {
+  text-align: center;
 }
 
 /* Media Queries for 360px and smaller screens */
