@@ -349,3 +349,90 @@ aws s3 ls s3://dev-aforodoma-site-bucket --recursive
 # invalidate cloudfront
 
 aws cloudfront create-invalidation --distribution-id E2EEF8MYXOI1H9 --paths "/\*"
+
+# developing form section
+
+✅ Updated Code Snippet for the First <section>
+Replace your first <section> with this:
+
+html
+Copy
+Edit
+
+<section style="background: linear-gradient(to right, rgba(0, 0, 255, 0.4), rgba(128, 0, 128, 0.4)); padding: 40px 20px; border-radius: 10px;">
+  <div class="hero-text-overlay">
+    <h2 class="text-blend">Get in Touch</h2>
+    <form action="mailto:aforodoma@gmail.com" method="post" enctype="text/plain" style="max-width: 600px; margin: auto;">
+      <label class="text-blend" for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px;"><br>
+
+      <label class="text-blend" for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px;"><br>
+
+      <label class="text-blend" for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px;"></textarea><br>
+
+      <button type="submit" class="cta-button2">Send Message</button>
+    </form>
+
+  </div>
+</section>
+✅ Style Notes
+If you'd like, I can also move the inline styles to your style.css file for cleaner HTML.
+
+Would you like me to do that or help you hook it up with Formspree (for better email delivery and confirmation)?
+
+You said:
+can you add the logic so that i can get the messages in my email?
+
+ChatGPT said:
+To receive form submissions in your email, using mailto: isn't reliable—it depends on the user's email client and often fails silently. A better solution is to use a form backend service like Formspree, Formsubmit, or Basin. These services securely collect the form data and email it to you.
+
+✅ Recommended: Use Formspree
+Here’s how to do it in 3 simple steps using Formspree (free for low volume):
+
+✅ Step 1: Update the HTML
+Replace the <form> tag and everything inside it with this:
+
+html
+Copy
+Edit
+
+<form action="https://formspree.io/f/your_form_id" method="POST" style="max-width: 600px; margin: auto;">
+  <label class="text-blend" for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px;"><br>
+
+<label class="text-blend" for="email">Email:</label><br>
+<input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px;"><br>
+
+<label class="text-blend" for="message">Message:</label><br>
+<textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px;"></textarea><br>
+
+<button type="submit" class="cta-button2">Send Message</button>
+
+</form>
+🔁 Replace https://formspree.io/f/your_form_id with your actual Formspree URL.
+
+✅ Step 2: Register on Formspree
+Go to https://formspree.io.
+
+Click "Get Started" or Sign In.
+
+Create a new form.
+
+Copy the form action URL (e.g. https://formspree.io/f/xayvpgzb) and replace your_form_id in the HTML above.
+
+✅ Step 3: Test the Form
+Upload your site to your server or open the .html file in your browser.
+
+Fill the form and submit.
+
+Check your inbox (the one you used to register with Formspree) for the submission.
+
+✅ Optional: Redirect or Success Message
+If you want to show a thank you message, add this in your HTML:
+
+html
+Copy
+Edit
+<input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
