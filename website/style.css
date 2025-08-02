@@ -621,30 +621,6 @@ blockquote .hero-text-overlay {
   }
 }
 
-/* Css for contact form*/
-/* Add blurred white background to hero text */
-.hero-text-overlay1 {
-  background: rgba(121, 1, 81, 0.15);
-  /* backdrop-filter: blur(10px); */
-  /* -webkit-backdrop-filter: blur(10px); */
-  border: 1px solid rgba(4, 80, 131, 0.2);
-  border-radius: 15px;
-  padding: 40px;
-  margin: 20px;
-  box-shadow: 0 8px 32px rgba(214, 4, 134, 0.1);
-}
-
-/* Ensure text is readable */
-.hero-text-overlay1 h1,
-.hero-text-overlay1 p {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin: 10px 0;
-}
-
-.hero-text-overlay1 .cta-button2 {
-  margin-top: 20px;
-}
-
 /* CSS for Certification */
 .carousel-container {
   width: 100%;
