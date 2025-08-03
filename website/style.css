@@ -91,6 +91,17 @@ blockquote {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.footer-content1 {
+  display: inline-flex;
+  gap: 20px;
+}
+.footer-section1 {
+  display: inline-flex;
+  gap: 10px;
+  background: linear-gradient(to right, rgb(17, 5, 184), rgb(46, 1, 19));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 blockquote p {
   /* color: rgb(17, 5, 184); */
 
@@ -103,6 +114,16 @@ blockquote p {
 .left {
   grid-column: 6 / 12;
 }
+
+/* Controls how broad the container of the footer section will be. 14 extends it to the right. 1 extends it to the left,  */
+.test {
+  grid-column: 14 / 1;
+}
+
+.footer-links {
+  list-style: none;
+}
+
 .size1 {
   font-size: 30px;
 }
@@ -205,6 +226,37 @@ blockquote p {
   padding: 40px;
   margin: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure text is readable */
+.hero-text-overlay h1,
+.hero-text-overlay p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+.hero-text-overlay a {
+  text-decoration: none;
+}
+
+.hero-text-overlay .cta-button2 {
+  margin-top: 20px;
+}
+/* Add blurred white background to hero text */
+.hero-text-overlay1 {
+  /* background: rgba(235, 5, 158, 0.15); */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border: 1px solid rgba(83, 6, 206, 0.2); */
+  border-radius: 15px;
+  padding: 40px;
+  margin: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  background: linear-gradient(
+    to right,
+    rgba(3, 232, 240, 0.95),
+    rgba(255, 0, 100, 0.8)
+  );
 }
 
 /* Ensure text is readable */
@@ -397,6 +449,10 @@ blockquote .hero-text-overlay {
     pointer-events: none;
     touch-action: pan-y; /* Allow vertical scrolling */
   }
+
+  /* .test {
+    display: none;
+  } */
 }
 /* Media Queries for 360px and smaller screens */
 @media screen and (max-width: 412px) {
@@ -570,6 +626,9 @@ blockquote .hero-text-overlay {
     pointer-events: none;
     touch-action: pan-y; /* Allow vertical scrolling */
   }
+  /* .test {
+    display: none;
+  } */
 }
 
 /* Additional breakpoint for very small screens */
@@ -609,6 +668,9 @@ blockquote .hero-text-overlay {
     font-size: 14px;
     padding: 6px 12px;
   }
+  /* .test {
+    display: none;
+  } */
 }
 
 @media screen and (max-width: 768px) {
@@ -619,5 +681,55 @@ blockquote .hero-text-overlay {
   /* Re-enable pointer events when needed */
   #container:hover canvas {
     pointer-events: auto;
+  }
+  /* .test {
+    display: none;
+  } */
+}
+@media screen and (max-width: 360px) {
+  .footer-content1 {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-section1 {
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 10px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .container2 {
+    padding: 0 15px;
+  }
+
+  .text-deco,
+  .text-blend {
+    font-size: 16px;
+  }
+
+  /* The next line of code is used to adjust the size of the background for the footer in small screens */
+  .test {
+    grid-column: 1;
   }
 }
