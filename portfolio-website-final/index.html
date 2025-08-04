@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- This next line of code was added so the code below (for half star) 
+ <i class="fa fa-star-half-o"></i> will work -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav class="nav-container">
+    <div class="nav-item left">
+        <!-- <a href="login.html">
+            <button class="login-btn">Login</button>
+        </a> -->
+      
+    </div>
+
+    <div class="nav-item center">
+        <!-- <a href="index.html">
+            <div class="logo-icon">👑</div>
+            
+        </a> -->
+             
+    
+      <!-- <a href="index.html"><img src="images/logo/logo5-removebg-preview.png" /></a> -->
+    </div>
+
+    <div class="nav-item right">
+      <i class="fa fa-bars" id="menu-icon" onclick="showMenu()"></i>
+      <i class="fa fa-times" id="close-icon" onclick="hideMenu()"></i>
+    </div>
+  </nav>
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video" poster="image/room5.PNG">
+    <source src="images/pictures/Original video - Trim.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+    <div class="hero-overlay"></div>
+
+
+  <!-- Navigation -->
+  <nav>
+    <!-- <button class="login-btn">👤 Login</button> -->
+
+    <!-- <a href="index.html"><img src="image/logo_5-removebg-preview.png" /></a> -->
+    <!-- <div class="nav-link2">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="rooms.html">ROOMS</a></li>
+        <li><a href="">BOOKING</a></li>
+        <li><a href="">CONTACT</a></li>
+      </ul>
+    </div> -->
+    <div class="nav-links" id="navLinks">
+      <ul>
+
+        <li><a href="index.html"></a></li>
+        <li><a href="index.html"></a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="projects.html">Projecs</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="login.html">LOGIN</a></li> -->
+      </ul>
+    </div>
+    <!-- <i class="fa fa-bars" id="menu-icon" onclick="showMenu()"></i>
+    <i class="fa fa-times" id="close-icon" onclick="hideMenu()"></i> -->
+    
+  </nav>
+
+  <!-- Text Box -->
+  <div class="text-box">
+    <!-- <p class="large-p">Site developer: Web Design By Afor 08036549648</p> -->
+    
+    <!-- <h5>Site developer: Web Design By Afor 08036549648 | aforodoma@gmail.com</h5> -->
+    <h1>Afor Linda Odoma</h1>
+    <p>Web Developer and DevOps Engineer</p>
+    <!-- <a href="" class="hero-btn">Make Your Reservation</a> -->
+     <div class="quote-container">
+                <div class="quote active">
+                    "From exquisite Websites to Infrastructure as Code, to Continuous Integration and Continuous Deployment."
+                </div>
+                <div class="quote">
+                    "Automating workflows with DevOps precision for faster, smarter deployments."
+                </div>
+                <div class="quote">
+                    "Building sleek, scalable websites that perform as great as they look."
+                </div>
+                <div class="quote">
+                    "Optimizing cloud costs without compromising performance – FinOps at its best!"
+                </div>
+                <div class="quote">
+                    "Turning complex technology into seamless digital experiences."
+                </div>
+            </div>
+            
+  </div>
+        <div class="scroll-indicator"></div>
+
+</section>
+
+
+
+<!-- Content Section -->
+
+
+<section class="content-section">
+        <div class="container">
+            <!-- <div class="content-left"> -->
+                <div class="header-content">
+                <h2>Cloud-Native Application Craftsman</h2>
+                <p>Afor builds modern web applications with intuitive interfaces and deploys them using cloud-native architectures and automated pipelines for maximum scalability and reliability.</p>
+                <p>Her key priorities in project delivery include responsive and user-friendly websites that are skewed and optimized to drive traffic and meet up with business KPIs. By integrating DevOps practices, she automates deployments to cloud providers and thrives in driving down cloud spend via FinOps practices. </p>
+                
+                                
+            </div>
+            
+            <!-- <div class="content-right">
+                <img src="images/284566.mp4"  alt="Kalahari landscape with zebras" class="destination-image">
+                <div class="destination-overlay">Kalahari, Botswana</div>
+            </div> -->
+            <div class="content-right">
+                <div class="slider-container">
+                    <div class="slider-images">
+                    <img src="images/pictures/aws-certified-cloud-practitioner copy.png" class="slide active" alt="Image 1">
+                    <img src="images/pictures/aws-certified-devops-engineer-professional-2 copy.png" class="slide" alt="Image 2">
+                    <img src="images/pictures/aws-certified-security-specialty-2.png" class="slide" alt="Image 3">
+                    <img src="images/pictures/aws-certified-solutions-architect-associate.png" class="slide" alt="Image 4">
+                    <img src="images/pictures/aws-certified-sysops-administrator-associate.png" class="slide" alt="Image 5">
+                    <img src="images/pictures/aws-certified-security-specialty-2.png" class="slide" alt="Image 6">
+                    <img src="images/pictures/aws-certified-solutions-architect-associate.png" class="slide" alt="Image 7">
+                    </div>
+                    <!-- without the next two lines of code, there is no scrolling  -->
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+                <div class="destination-overlay">Kalahari, Botswana</div>
+                </div>
+
+        </div>
+    </section>
+
+    <section class="Mega Explore-section">
+        <div class="header-content">
+                <h2>Services</h2>
+            </div>
+        <div class="container">
+            
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-image bespoke-card">
+                        <div class="overlay"></div>
+                        <div class="card-content">
+                            <h3>Web Developer</h3>
+                            <p>Afor integrates HTML, CSS, JavaScript, and WordPress (Leveraging Elementor and custom plugins) to deliver responsive, user-friendly websites that work seamlessly across all screen types. Her web designs are skewed and optimized to drive traffic and meet up with business KPIs.</p>
+                            <!-- <div class="arrow-button">
+                                <span>→</span>
+                            </div> -->
+                            <a href="projects.html" class="arrow-button">
+                                <span>→</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="service-card">
+                    <div class="card-image bespoke-card">
+                        <div class="overlay"></div>
+                        <div class="card-content">
+                            <h3>Bespoke<br>Travel</h3>
+                            <p>Let's curate your personalized trip, exactly how you want it.</p>
+                            <div class="arrow-button">
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="service-card">
+                    <div class="card-image destination-card">
+                        <div class="overlay"></div>
+                        <div class="card-content">
+                            <h3>DevOps Engineer</h3>
+                            <p>Afor orchestrates Infrastructure as Code (IaC) and CI /CD pipelines to automate deployments with high speed and accuracy. By integrating scalability and security she is able to ensure high availability and security for the cloud environments of organisations.  </p>
+                            <!-- <div class="arrow-button">
+                                <span>→</span>
+                            </div> -->
+                            <a href="projects.html" class="arrow-button">
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-image corporate-card">
+                        <div class="overlay"></div>
+                        <div class="card-content">
+                            <h3>FinOps</h3>
+                            <p>Afor leverages her <br> background in DevOps to mediate between teams - speaking the language they both understand. With Cloud Cost Visualization & Analytics, she provides visibility into cloud spend achieve Cloud Cost Optimization & <br>Planning.  </p>
+                            <!-- <div class="arrow-button">
+                                <span>→</span>
+                            </div> -->
+                            <a href="projects.html" class="arrow-button">
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+        
+    </section>
+       
+   
+
+
+   
+   <!-- Final Section//////////////////////////////////// -->
+     <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>From Code to Cloud — I’ve Got You Covered</h2>
+            <p>Whether you're launching a new product or automating deployments, I streamline every step. Get in touch to see how I can help.</p>
+            <a href="contact.html"><button class="cta-button2">Let's Talk</button></a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container1">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Let's Talk</h3>
+                    <div class="contact-info">
+                        <p>+234 08036549648</p>
+                        <p><a href="mailto:aforodoma@gmail.com">aforodoma@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Specialty</h3>
+                    <ul class="footer-links">
+                        <li><a href="Services.html#website">Web Developer</a></li>
+                        <li><a href="Services.html#devops">DevOps Engineer</a></li>
+                        <li><a href="Services.html#finops">FinOps</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Projects</h3>
+                    <ul class="footer-links">
+                       <li><a href="projects.html#webdesign">Live Projects in Web Development </a></li>
+                        <li><a href="projects.html#devops">Production Deployments in DevOps</a></li>
+                        <li><a href="projects.html#finops">Demo Projects in FinOps</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect with us</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/afor-linda-odoma-5527a6107" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/odomaaforlinda/" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/AforOdoma" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="footer-bottom">
+                <p>&copy; 2025 All rights reserved, Afor Linda Odoma</p>
+            </div>
+    </footer>
+
+
+        
+    <!-- Footer -->
+     <!-- <section class="footer">
+        
+        
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i> -->
+            <!-- the facebook, instagram, twitter and linkedin must be writwn in lowercase (small letters) -->
+        <!-- </div>
+        <p>Made with <i class="fa fa-heart-o"> Web Developers World</i></p>
+     </section> -->
+
+    <script src="script.js">
+    
+</script>
+
+
+    <!-- <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            hideMenu();
+        });
+    </script> -->
+</body>
+</html>

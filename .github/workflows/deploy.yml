@@ -28,14 +28,14 @@ jobs:
           aws s3 ls s3://dev-aforodoma-site-bucket
 
       - name: Navigate to website directory
-        working-directory: ./website
+        working-directory: ./portfolio-website-final
         run: |
           echo "Switched to directory: $(pwd)"
           echo "Listing contents:"
           ls -la
 
       - name: List files to be deployed
-        working-directory: ./website
+        working-directory: ./portfolio-website-final
         run: |
           echo "HTML files:"
           find . -name "*.html"
@@ -47,7 +47,7 @@ jobs:
           find . -name "*.css"
 
       - name: Deploy to S3
-        working-directory: ./website
+        working-directory: ./portfolio-website-final
         run: |
           echo "Deploying files to S3..."
           aws s3 sync . s3://dev-aforodoma-site-bucket \
