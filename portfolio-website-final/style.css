@@ -211,6 +211,10 @@ nav img {
   /* color: #7a4a01; */
   color: #fff;
 }
+.text-box a {
+  text-decoration: none;
+  color: white;
+}
 .text-box h5 {
   /* background-color: rgba(0, 0, 0, 0.5); */
   color: black;
@@ -1060,6 +1064,11 @@ body {
 }
 
 .card-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.card-content1 {
   position: relative;
   z-index: 2;
   color: white;
