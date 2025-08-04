@@ -1383,6 +1383,12 @@ body {
   .text-blend {
     padding-left: 15px;
   }
+  .card-content1 img {
+    width: 100%;
+  }
+  .card-content1 {
+    width: 100%;
+  }
 }
 /* For larger phones/small tablets (min-width: 412px) */
 @media (min-width: 412px) {
@@ -1406,6 +1412,12 @@ body {
 
   .hero-btn {
     font-size: 20px;
+  }
+  .card-content1 img {
+    width: 100%;
+  }
+  .card-content1 {
+    width: 100%;
   }
 
   .card-content h3 {
@@ -1983,6 +1995,12 @@ body {
   }
   .text-blend {
     padding-left: 15px;
+  }
+  .card-content1 img {
+    width: 100%;
+  }
+  .card-content1 {
+    width: 100%;
   }
 }
 @media (max-width: 360px) {
