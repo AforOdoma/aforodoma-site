@@ -2087,3 +2087,21 @@ body {
 .hero-text-overlay h2 {
   text-align: center;
 }
+
+/* Responsive Design */
+@media (min-width: 1000px) {
+  .footer-content {
+    gap: 80px;
+    margin: 30px;
+  }
+
+  .footer-column h3 {
+    font-size: 20px;
+  }
+  .footer-column p {
+    font-size: 15px;
+  }
+  .footer-links a {
+    font-size: 15px;
+  }
+}
